@@ -33,10 +33,12 @@ jobs:
       # Build docker image
       - name: Build docker image
         run: |
-          echo "google"
-          docker build -t efrei-devops-tp2 .
-          docker tag efrei-devops-tp2 loicosiewe16/efrei-devops-tp2:0.0.1
-
+          echo "Let's go !!"
+          docker build -t $USERNAME/efrei-devops-tp2:$VERSION .
+          docker push $USERNAME/efrei-devops-tp2:$VERSION
+        env:
+          USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
+          VERSION: 0.0.1
       # Build docker image
       #- name: Build docker image
       #  run: docker build -t efrei-devops-tp2 .
