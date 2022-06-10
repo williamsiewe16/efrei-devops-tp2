@@ -30,8 +30,10 @@ jobs:
           password: ${{secrets.DOCKERHUB_TOKEN}}
 
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      # Build docker image
+      - name: Build docker image
+        run: docker build -t efrei-devops-tp2 .
+
+      # Build docker image
+      #- name: Build docker image
+      #  run: docker build -t efrei-devops-tp2 .
