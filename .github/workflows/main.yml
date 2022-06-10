@@ -40,7 +40,7 @@ jobs:
           then
                 docker push $USERNAME/efrei-devops-tp2:$VERSION
           else
-                echo NO PUSH
+                echo YOU SHOULD CHECK YOUR DOCKERFILE
           fi
         env:
           USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
