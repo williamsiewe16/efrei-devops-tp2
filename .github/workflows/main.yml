@@ -35,8 +35,13 @@ jobs:
         run: |
           echo "Let's go !!"
           docker build -t $USERNAME/efrei-devops-tp2:$VERSION .
-          docker run --rm -i hadolint/hadolint < dockerfile | wc -l
-          #docker push $USERNAME/efrei-devops-tp2:$VERSION
+          
+          if [ $(docker run --rm -i hadolint/hadolint < dockerfile | wc -l) -eq 0 ]
+          then
+                docker push $USERNAME/efrei-devops-tp2:$VERSION
+          else
+                echo NO PUSH
+          fi
         env:
           USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
           VERSION: 0.0.1
