@@ -39,6 +39,3 @@ jobs:
         env:
           USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
           VERSION: 0.0.1
-      # Build docker image
-      #- name: Build docker image
-      #  run: docker build -t efrei-devops-tp2 .
