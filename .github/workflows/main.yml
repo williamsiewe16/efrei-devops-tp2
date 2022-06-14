@@ -33,7 +33,7 @@ jobs:
       # Build docker image
       - name: Build docker image
         run: |
-          echo "Let's go !!"
+          echo "Let's go  !!"
           if [ $(docker run --rm -i hadolint/hadolint < dockerfile | wc -l) -eq 0 ]
           then
                 docker build -t $USERNAME/efrei-devops-tp2:$VERSION .
